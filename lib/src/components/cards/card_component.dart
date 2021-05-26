@@ -18,7 +18,7 @@ class CourseCard {
   @Output('onDelete')
   Stream get onDelete => _deleteCtrl.stream; 
 
-  void deleteItem(String id) {
+  void deleteItem() {
     _deleteCtrl.sink.add(null);
   }
 }
