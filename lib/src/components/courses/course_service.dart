@@ -5,6 +5,7 @@ import 'package:basicdemo/src/model/course_model.dart';
 
 @Injectable()
 class CourseService {
+
   final List<Course> _courses = [
     Course(
       '111', 'The title1', 'Myself', 9.99, 'Fancy description', 5, 'assets/images/1.png', ['Lecture1', 'Lecture2'],
@@ -15,6 +16,9 @@ class CourseService {
       ['JavaScript', 'programming'], DateTime.now().toIso8601String(),
     ),
   ];
+
+  final List<Course> _enrollCourses = [];
+
 
   List<Course> getAll() {
     return _courses;
@@ -28,5 +32,10 @@ class CourseService {
   void deleteCourse(String uid) {
     _courses.removeWhere((course) => course.uid == uid);
     print(uid);
+  }
+
+  void enroll(Course course) {
+    _enrollCourses.add(course);
+    print(_enrollCourses);
   }
 }
