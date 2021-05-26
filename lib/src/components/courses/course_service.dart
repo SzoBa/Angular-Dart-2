@@ -19,4 +19,14 @@ class CourseService {
   List<Course> getAll() {
     return _courses;
   }
+
+  Course getSingleCourse(String uid) {
+    return _courses.firstWhere((course) => course.uid == uid, 
+    orElse: () => throw StateError('Id param is not found!'));
+  }
+
+  void deleteCourse(String uid) {
+    _courses.removeWhere((course) => course.uid == uid);
+    print(uid);
+  }
 }
