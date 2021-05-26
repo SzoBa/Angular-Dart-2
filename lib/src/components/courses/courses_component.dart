@@ -1,6 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:basicdemo/src/components/cards/card_component.dart';
+import 'package:basicdemo/src/components/courses/course_service.dart';
 import 'package:basicdemo/src/model/course_model.dart';
 import 'package:basicdemo/src/utils/routes.dart';
 
@@ -9,25 +10,21 @@ import 'package:basicdemo/src/utils/routes.dart';
   templateUrl: './courses_template.html',
   // styleUrls: ['component_path.css'],
   directives: [coreDirectives, CourseCard],
-  providers: [],
+  providers: [ClassProvider(CourseService)],
 )
-class CoursesComponent {
+class CoursesComponent implements OnInit{
 
   final Router _router;
+  final CourseService _courseService;
+  List<Course> courses = [];
 
-  CoursesComponent(this._router);
+  CoursesComponent(this._router, this._courseService);
 
+  @override
+  void ngOnInit() {
+    courses = _courseService.getAll();
+  }
 
-  List<Course> courses = [
-    Course(
-      '111', 'The title1', 'Myself', 9.99, 'Fancy description', 5, 'assets/images/1.png', ['Lecture1', 'Lecture2'],
-      ['JavaScript', 'programming'], DateTime.now().toIso8601String(),
-    ),
-    Course(
-      '112', 'The title2', 'Myself', 9.99, 'Fancy description', 5, 'assets/images/2.png', ['Lecture1', 'Lecture2'],
-      ['JavaScript', 'programming'], DateTime.now().toIso8601String(),
-    ),
-  ];
 
   void deleteItem(String uid) {
     courses.removeWhere((course) => course.uid == uid);
