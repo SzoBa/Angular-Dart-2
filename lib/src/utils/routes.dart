@@ -20,6 +20,7 @@ class Routes {
 
   static final all = <RouteDefinition>[
     courses,
+    home,
     // RouteDefinition.redirect(
     //   path: '/',
     //   redirectTo: RoutePaths.courses.toUrl()
