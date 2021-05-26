@@ -4,7 +4,7 @@ import 'package:angular/angular.dart';
 
 @Component(
   selector: 'app-header',
-  templateUrl: './app-header.template.html',
+  templateUrl: './header_template.html',
   // styleUrls: ['component_path.css'],
   directives: [coreDirectives],
   providers: [],
