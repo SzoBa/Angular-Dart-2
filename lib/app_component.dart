@@ -1,7 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:basicdemo/src/components/header/header_component.dart';
-import 'package:basicdemo/src/components/courses/courses_component.dart';
 import 'package:basicdemo/src/utils/routes.dart';
 
 
@@ -12,7 +11,7 @@ import 'package:basicdemo/src/utils/routes.dart';
   selector: 'my-app',
   // styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [routerDirectives, AppHeader, CoursesComponent],
+  directives: [routerDirectives, AppHeader],
   exports: [RoutePaths, Routes]
 )
 class AppComponent {
