@@ -8,6 +8,7 @@
       <course-card
         [selectedCourse]="course"
         (onDelete)="deleteItem(course.uid)"
+        (onViewDetail)="viewDetail(course.uid)"
       ></course-card>
     </div>
   </div>
