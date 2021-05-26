@@ -23,4 +23,9 @@ class Course {
     this.updateAt
     ]
   );
+
+  @override
+  String toString() {
+    return '$uid => $title';
+  }
 }
