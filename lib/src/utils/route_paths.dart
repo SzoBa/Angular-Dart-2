@@ -7,6 +7,6 @@ class RoutePaths {
   static final course_detail = RoutePath(path: '${courses.path}/:$idParam');
 }
 
-// String getId(Map<String, String> params) {
-//   return params[idParam];
-// }
+String getId(Map<String, String> params) {
+  return params[idParam];
+}
