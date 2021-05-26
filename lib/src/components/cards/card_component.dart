@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:angular/angular.dart';
 import 'package:basicdemo/src/model/course_model.dart';
 
@@ -11,7 +13,12 @@ class CourseCard {
   @Input('selectedCourse')
   Course course;
 
+  final StreamController _deleteCtrl = StreamController();
+
+  @Output('onDelete')
+  Stream get onDelete => _deleteCtrl.stream; 
+
   void deleteItem(String id) {
-    print(id);
+    _deleteCtrl.sink.add(null);
   }
 }
