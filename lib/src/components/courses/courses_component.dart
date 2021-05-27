@@ -27,7 +27,7 @@ class CoursesComponent implements OnInit{
 
 
   void deleteItem(String uid) {
-    courses.removeWhere((course) => course.uid == uid);
+    _courseService.deleteCourse(uid);
   }
 
   Future<NavigationResult> viewDetail(String uid) {
