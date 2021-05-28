@@ -24,8 +24,28 @@ class Course {
     ]
   );
 
+
+  factory Course.fromJson(Map<String, dynamic> json) => Course(
+    json['uid'], json['title'], json['author'], json['price'], json['description'],
+    json['duration'], json['image'], json['lectures'], json['tags'], json['updateAt']);
+
+
   @override
   String toString() {
     return '$uid => $title';
   }
+
+  Map toJson() => {
+        'uid': uid,
+        'title': title,
+        'author': author,
+        'price': price,
+        'description': description,
+        'duration': duration,
+        'image': image,
+        'lectures': lectures,
+        'tags': tags,
+        'updateAt': updateAt,
+      };
+
 }
